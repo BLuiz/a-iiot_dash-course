@@ -1,0 +1,10 @@
+*Dashboards Interativos com Python*
+ - Módulo: 1. Apresentação do Curso
+ - Módulo: 2. Lógica de Programação
+ - Módulo: 3. Introdução a Python
+ - Módulo: 4. Fundamentos da linguagem
+ - Módulo: 5. Projeto - construindo uma calculadora
+ - Módulo: 6. Projeto - software de gestão para locadora de carros
+ - Módulo: 7. Módulo OS
+ - Módulo: 8. Gerenciamento de erros e depuração de códigos
+ - Módulo: 9. Projeto: Pedra, Papel, Tesoura

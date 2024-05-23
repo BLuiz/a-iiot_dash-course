@@ -1,0 +1,43 @@
+- Instalar python;
+
+- Instalar IDE;
+
+- Instalar biblioteca django:
+pip install django
+- Testar algum comando django para verificar a instalação da bilioteca
+django-admin
+
+- Iniciar projeto:
+django-admin startproject nome_da_pasta
+
+- Estrutura Django - Backend
+./nome_da_pasta/nome_da_pasta/__init__.py - define o projeto em python na pasta
+./nome_da_pasta/nome_da_pasta/settings.py - configurações do projeto
+./nome_da_pasta/nome_da_pasta/asgi.py - configurações do server
+./nome_da_pasta/nome_da_pasta/wsgi.py - configurações do server 
+./nome_da_pasta/nome_da_pasta/url.py - define as rotas do projeto
+./nome_da_pasta/manage.py - inicializa o sistema
+- Estrutura Django - Frontend
+./templates/html - define o corpo do site
+./templates/css - define o estilo do site
+./templates/js - define as ações do site
+
+- Inicializar Aplicação
+-> Acessar pasta ./nome_da_pasta
+python manage.py runserver
+
+- Criar Aplicativo
+pyhton manage.py startapp nome_do_app
+- Adicionar o app no settings.py
+-> Acessar arquivo ./nome_da_pasta/nome_da_pasta/settings.py
+Installed_Apps = [..., 'nome_do_app', ...]
+
+- Estrutura Django App
+./nome_da_pasta/nome_do_app/migrations/ - migração de dados (manipulação da BD)
+./nome_da_pasta/nome_do_app/__init__.py - define o app em python na pasta
+./nome_da_pasta/nome_do_app/admin.py - gerencia página de admin
+./nome_da_pasta/nome_do_app/apps.py - gerencia apps da própria pasta de apps
+./nome_da_pasta/nome_do_app/models.py - configura tabelas para o BD
+./nome_da_pasta/nome_do_app/tests.py - testagem do app 
+./nome_da_pasta/nome_do_app/view.py - define a pagina a ser carregada por uma rota
+
