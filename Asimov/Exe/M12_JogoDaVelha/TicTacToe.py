@@ -6,23 +6,27 @@ from os import system
 
 # Definição do símbolo de cada jogador
 players = dict()
-players['you'] = valid_symbol("Informe o símbolo desejado para você: ")
-players['npc'] = valid_symbol("Informe o símbolo desejado para o computador: ")
+players['you'] = valid_range("Símbolo: ", ['X','O'])
+players['npc'] = 'X' if players['you'] == 'O' else 'O'
 
+# Incializando o jogo
+game = JogoDaVelha()
 
-while True:
-    
-    # Incializando o jogo
-    game = JogoDaVelha()
+winner = False
+while not winner:
 
-    print(display_board(game.board))
-
-    for symbol in players.values:
-        display_board(game.board)
+    for symbol in players.values():
+        system('cls')
+        print(display_board(game.board))
 
         winner = game.endgame()
+        
 
-        if not winner: continue
-        elif winner == ' ': print("Empatou")
-        else: print("Ganhador: ", winner)
+        if winner:
+            if winner == ' ': print("Empatou")
+            else: print("Ganhador: ", winner)
+            break
 
+
+# validar se os dois escolherem mesmo símbolo
+# validar se o jogador escolher uma casa que já tem símbolo

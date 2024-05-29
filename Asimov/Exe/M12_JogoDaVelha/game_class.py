@@ -5,17 +5,22 @@ from uteis import *
 class JogoDaVelha():
     def __init__(self):
         self.board = [
-            ['00', '01', '02'], 
-            ['10', '11', '12'], 
-            ['20', '21', '22']
+            [' ', ' ', ' '], 
+            [' ', ' ', ' '], 
+            [' ', ' ', ' ']
         ]
 
-    def set_move(self, symbol, place):
+        self.board = {k:' ' for k in range()}
+
+
+    def set_move(self, symbol, place):  ###
         """Função para registrar uma jogada no tabuleiro,por meio do local e o símbolo
         
         :param symbol: simbolo que cada jogador insere no tabuleiro
         :param place: uma tupla que informa a posição em que está sendo jogado. (row, col)
         """
+        
+        
         self.board[place[0]][place[1]] = symbol
 
     def endgame(self):
@@ -36,8 +41,7 @@ class JogoDaVelha():
         if len(set(ndD)) == 1: return ndD[0]
         # Verifica vencedor nas linhas e colunas
         rgB = self.board
-        tpB = tp_board(self.board)
+        tpB = transpose_matrix(self.board)
         for i in range(3): 
             if len(set(rgB[i])) == 1 or len(set(tpB[i])) == 1: return stD[i]
         return ' '
-
