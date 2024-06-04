@@ -1,7 +1,6 @@
 """Projeto de jogo: Jogo da Velha"""
-from uteis import *
-from game_class import JogoDaVelha
-from time import sleep
+from M12_JogoDaVelha.uteis import *
+from M12_JogoDaVelha.game_class import JogoDaVelha
 from os import system
 from random import choice
 

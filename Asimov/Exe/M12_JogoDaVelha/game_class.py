@@ -1,6 +1,6 @@
 """### Construção da base para o jogo"""
 
-from uteis import *
+from M12_JogoDaVelha.uteis import *
 
 class JogoDaVelha():
     
@@ -17,13 +17,11 @@ class JogoDaVelha():
         :param place: uma tupla que informa a posição em que está sendo jogado. (row, col)
         """
         # Falha se o lugar estiver ocupado
-        if self.board[place // 3][place] != ' ':
-            print('Impossível jogar nesse lugar')
-            return
+        if self.board[place // 3][place] != ' ': return False
         
-        print('Jogada realizada')
         # Caso contrário, realizando jogada
         self.board[place // 3][place] = symbol
+        return True
 
     def endgame(self):
         """Função para verificar vencedor da partida
@@ -66,11 +64,6 @@ class JogoDaVelha():
                 if k % 3 != 2: txt += '|'
             if i != 2: txt += '\n-----+-----+-----\n'
         return txt
-    
-        # for key, value in self.board.items():
-        #     txt += f'  {value}  '
-        #     if key % 3 != 0: txt += '|'
-        #     elif key != len(self.board): txt += '\n-----+-----+-----\n'
     
     def playable_places(self):
         """Função para retornar as chaves dos lugares disponíveis para jogada"""

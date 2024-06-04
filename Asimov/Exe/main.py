@@ -5,7 +5,7 @@
 # from M07_OS             import Organiza as M7
 # from M09_PedPapTes      import PedPapTes as M9
 # from M11_CaosAcademias  import GymSim as M11
-# from M12_JogoDaVelha    import *
+# from M12_JogoDaVelha    import TicTacToe as M12
 
 
 
@@ -50,3 +50,4 @@
 # M11.gymsim()
 
 '# 12. Projeto - Jogo da Velha'
+# M12.tictactoe()
