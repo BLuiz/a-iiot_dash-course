@@ -46,3 +46,5 @@ def secnd_diag(board):
     size = len(board ) - 1
     return [row[(i+1) * size] for i, row in enumerate(board)]
 
+def isEven(num):
+    return (num % 2) == 0

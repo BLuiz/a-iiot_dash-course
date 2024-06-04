@@ -3,6 +3,7 @@
 from uteis import *
 
 class JogoDaVelha():
+    
     def __init__(self):
         self.board = [
             {0:' ', 1:' ', 2:' '}, 
@@ -15,39 +16,45 @@ class JogoDaVelha():
         :param symbol: simbolo que cada jogador insere no tabuleiro
         :param place: uma tupla que informa a posição em que está sendo jogado. (row, col)
         """
-        # False se o lugar estiver ocupado
-        if self.board[place // 3][place] != ' ': return 0
-        # Caso contrário, True, realizando jogada
-        self.board[place // 3][place] == symbol
-        return 1
-
+        # Falha se o lugar estiver ocupado
+        if self.board[place // 3][place] != ' ':
+            print('Impossível jogar nesse lugar')
+            return
+        
+        print('Jogada realizada')
+        # Caso contrário, realizando jogada
+        self.board[place // 3][place] = symbol
 
     def endgame(self):
         """Função para verificar vencedor da partida
         :return: símbolo de quem ganhou a partida
         """
-        # Se ainda houver células vazias o jogo deve continuar
-        if any(v==' ' for v in self.board.values()): return 0
-        
+
+        is_filled = lambda seq: seq != ' ' 
+
         # Vendedor nas diagonais
         diag1 = first_diag(self.board)
-        if len(set(diag1)) == 1: return diag1[0]
+        if len(set(diag1)) == 1 and is_filled(diag1[0]): return diag1[0]
         diag2 = secnd_diag(self.board)
-        if len(set(diag2)) == 1: return diag2[0]
+        if len(set(diag2)) == 1 and is_filled(diag2[0]): return diag2[0]
 
-        # Caso contrário, verifica qual venceu
-        for i in range(len(board)):
+        for i in range(len(self.board)):
             # Vencedor nas linhas
-            row = (board[i]).values()
-            if len(set(row))==1: return list(set(row))[0]
+            row = (self.board[i]).values()
+            if len(set(row)) == 1 and is_filled(list(set(row))[0]): return list(set(row))[0]
             # Vencedor nas colunas
-            col = transpose_board(board)[i]
-            if len(set(col))==1: return list(set(row))[0]
+            col = transpose_board(self.board)[i]
+            if len(set(col)) == 1 and is_filled(list(set(col))[0]): return list(set(col))[0]
         
-        # Caso não houve vencedor, retorna vazio para sinalizar empate
-        return ' '
-    
+        # Caso não houve vencedor e todos os lugares estejam ocupados, retorna vazio para sinalizar empate
+        if len(self.playable_places()) == 0: 
+            print('Nenhum lugar disponível')
+            return ' '
 
+        # Se ainda houver células vazias o jogo deve continuar
+        print('Células disponíveis ainda')
+        return False
+    
     def display_board(self):
         """Função para exibir o tabuleiro e o posicionamento de cada jogador. Funciona apenas com uma matriz composta de dicionários dentro de uma lista
         :return: uma string que representa o tabuleiro
@@ -60,14 +67,15 @@ class JogoDaVelha():
             if i != 2: txt += '\n-----+-----+-----\n'
         return txt
     
-        for key, value in self.board.items():
-            txt += f'  {value}  '
-            if key % 3 != 0: txt += '|'
-            elif key != len(self.board): txt += '\n-----+-----+-----\n'
+        # for key, value in self.board.items():
+        #     txt += f'  {value}  '
+        #     if key % 3 != 0: txt += '|'
+        #     elif key != len(self.board): txt += '\n-----+-----+-----\n'
+    
+    def playable_places(self):
+        """Função para retornar as chaves dos lugares disponíveis para jogada"""
+        playable = list()
+        for row in self.board: 
+            playable += [k for k, v in row.items() if v==' ']
+        return playable
 
-
-board = [
-    {0:' ', 1:'O', 2:' '}, 
-    {3:'X', 4:'O', 5:'X'}, 
-    {6:' ', 7:'O', 8:' '}, 
-]
