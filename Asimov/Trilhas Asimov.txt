@@ -1,10 +1,16 @@
 *Dashboards Interativos com Python*
- - Módulo: 1. Apresentação do Curso
- - Módulo: 2. Lógica de Programação
- - Módulo: 3. Introdução a Python
- - Módulo: 4. Fundamentos da linguagem
- - Módulo: 5. Projeto - construindo uma calculadora
- - Módulo: 6. Projeto - software de gestão para locadora de carros
- - Módulo: 7. Módulo OS
- - Módulo: 8. Gerenciamento de erros e depuração de códigos
- - Módulo: 9. Projeto: Pedra, Papel, Tesoura
+### 01_Python Starter
+	- Módulo: 1. Apresentação do Curso
+	- Módulo: 2. Lógica de Programação
+	- Módulo: 3. Introdução a Python
+	- Módulo: 4. Fundamentos da linguagem
+	- Módulo: 5. Projeto - construindo uma calculadora
+	- Módulo: 6. Projeto - software de gestão para locadora de carros
+	- Módulo: 7. Módulo OS
+	- Módulo: 8. Gerenciamento de erros e depuração de códigos
+	- Módulo: 9. Projeto: Pedra, Papel, Tesoura
+	- Módulo: 10. Projeto: Programação Orientada a Objetos
+	- Módulo: 11. Projeto: Simulador de Caos em Academias
+	- Módulo: 12. Projeto: Jogo da Velha
+### 02_Analisando Dados com Pandas & SQL
+	- Módulo: 1. Análise de dados e obesidade mundial
