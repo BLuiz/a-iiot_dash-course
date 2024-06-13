@@ -13,4 +13,6 @@
 	- Módulo: 11. Projeto: Simulador de Caos em Academias
 	- Módulo: 12. Projeto: Jogo da Velha
 ### 02_Analisando Dados com Pandas & SQL
-	- Módulo: 1. Análise de dados e obesidade mundial
+	- Módulo: 1. Onboarding
+	- Módulo: 2. Conceitos Básicos de Pandas
+	- Módulo: 3. SQL e Pandas
