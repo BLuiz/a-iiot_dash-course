@@ -16,3 +16,10 @@
 	- Módulo: 1. Onboarding
 	- Módulo: 2. Conceitos Básicos de Pandas
 	- Módulo: 3. SQL e Pandas
+	- Módulo: 4. Análise dos preços da gasolina no Brasil
+	- Módulo: 5. Análise de dados de obesidade
+	- Módulo: 6. Análise de dados de pib per capita
+	- Módulo: 7. Desafios
+### 03_Introdução ao Plotly
+	- Módulo: 1. Fundamentos do Plotly
+	- Módulo: 2. 
